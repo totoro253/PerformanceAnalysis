@@ -32,3 +32,4 @@ stock_prices %>%
   group_by(symbol) %>%
   mutate(close = close/ close[1]) %>%
   summarise(last = last(close))
+

@@ -3,7 +3,8 @@ Consider investing in two stocks: Microsoft and General Electric. As a prudent i
 
 # Q1: Which of the two stocks would have been your best performer during the study period?
 
-# Q2: Calculate quarterly returns instead of monthly returns
+# Q2: Calculate quarterly returns instead of monthly
+# Q3  Plot the maximal closing price for Microsoft and General electric by the period of 1 January 2010 until 1 december 2010
 
 
 
