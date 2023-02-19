@@ -1,0 +1,14 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Logbook
+Registering Windows fonts with R
+NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.
+      Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and
+      if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow
+> hrbrthemes::import_roboto_condensed()
+You will likely need to install these fonts on your system as well.
+
+You can find them in [C:/Users/J/AppData/Local/R/win-library/4.2/hrbrthemes/fonts/roboto-condensed]

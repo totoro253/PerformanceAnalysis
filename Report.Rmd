@@ -1,0 +1,31 @@
+---
+title: "Analysis"
+author: "Fauve Setrodinomo"
+date: "19-2-2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+Consider investing in two stocks: Microsoft and General Electric. As a prudent investor, you analyze the historical performance of the stocks during the period of 1990-01-01 to 2017-12-31.
+
+
+## Period: 1 January until 1 March
+OVERVIEW
+-Line is closing price
+-Dotted is adjusting price
+
+PLOT 1
+- Closing price
+PLOT 2
+- Adjusting price
+
+```{r pressure, echo=FALSE}
+plot(Q1_Overview)
+plot(Q1_Close)
+plot(Q1_Adjust)
+
+```

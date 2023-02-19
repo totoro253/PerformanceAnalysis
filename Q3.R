@@ -18,14 +18,82 @@ Q1_2010 <- c("MSFT","GE") %>%
          to = "2010-03-01") %>%
   group_by(symbol)
 
-Q1_Q<- c("MSFT","GE") %>%
-  group_by(symbol)
-  tq_transmute(select = adjusted,
-             mutate_fun = apply.quarterly,
-             FUN = max,
-             col_rename = "max.close") %>% 
-  mutate(year.qtr = paste0(year(date), "-Q",quarter(date))) %>%
-  select(-date)
+
+
+# Price per month in Q1
+Q1_monthly <- c("MSFT","GE") %>%
+  tq_get(get = "stock.prices",
+         from = "2010-01-01",
+         to = "2010-03-01") %>%
+  group_by(symbol) 
+ 
+  
+  # Price per month in Q1
+  Q1_Daily <- Q1_monthly %>%
+       group_by(symbol) 
+       tq_transmute(select = adjusted,
+               mutate_fun = apply.daily,
+               FUN = max,
+               col_rename = "max.close") %>% 
+    mutate(daily.qtr = paste0(daily(date), "-Q",daily(date))) %>%
+    select(-date)
+  
+
+#Plot stock prices per month in Q1
+ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=symbol)) +
+  geom_area(aes(y=close))+
+  theme_classic()
+
+
+# Correlation for the closing price related to adjusting price
+Q1P1 <-ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=close)) +
+  geom_area() +
+  facet_wrap(~symbol, scales="fixed", ncol =1) +
+  theme_bw()
+
+Q1P1 
+
+
+
+# Adjusted prices 
+Q1_Overview <-ggplot(Q1_Daily, aes(x=date,y=adjusted, color=symbol)) +
+  facet_wrap(~symbol, scales="fixed", ncol =1) +
+  geom_line(aes(y=close)) +
+  geom_point() +
+  theme_bw()
+
+Q1_Overview
+
+
+
+
+
+# Closing prices
+
+Q1_Close <- ggplot(Q1_Daily, aes(x=date,y=close,  color=symbol)) +
+  geom_line(aes(y=close)) +
+  geom_point()+
+  facet_wrap(~symbol,scales="free", ncol =1) +
+  theme_bw()
+
+
+Q1_Close 
+
+# Adjust prices
+
+Q1_Adjust <- ggplot(Q1_Daily, aes(x=date,y=adjusted, color=symbol)) +
+  geom_line(aes(y=adjusted))+
+  geom_point()+
+  facet_wrap(~symbol,scales="free", ncol =1) +
+  theme_bw()
+
+
+Q1_Adjust
+
+
+
+
+
 
 
 
