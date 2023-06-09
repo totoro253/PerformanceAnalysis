@@ -19,7 +19,7 @@ an investment with reliable metrics.
 
 ## Analysis dotcom period.
 In the folder Analysis I created a file named Q4 with the analysis of the entire dotcom period, 1995-2000 and for the seperated year 2000 and 2005.  I analysed this based on the adjusted price which means the difference between the opening price and the closing price.
-Based on the graph, the period graph of 1995-2000, the General Electronic has way higher opening prices while Microsoft Electronic kept a quiete consistent price. The General Electronic truly started to peak around 1998 and has more peaks in the opening price . Microsoft electronics kept it more consistent and only had a peak in the opening prices around March 20000.
+Based on the graph, the period graph of 1995-2000, the General Electronic has way higher opening prices while Microsoft Electronic kept a quiete consistent price. The General Electronic truly started to peak around 1998 and has more peaks in the opening price . Microsoft electronics kept it more consistent and only had a peak in the opening prices around March 2000.
 
 #  Other analysis
 Based on  the data I tried to solve different answers such as. which of the two stocks would have been your best performer during the study period? This question is based on 2010 and  the  monthly return. The analysis are in the folder analysis, file Q1,Q2,Q3.
