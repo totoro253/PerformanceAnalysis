@@ -41,9 +41,9 @@ Q1_monthly <- c("MSFT","GE") %>%
 
 #Plot stock prices per month in Q1
 ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=symbol)) +
-  geom_area(aes(y=close))+
-  theme_classic()
-
+  geom_area(aes(y=cl)
+ose))+
+  theme_classic(()
 
 # Correlation for the closing price related to adjusting price
 Q1P1 <-ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=close)) +
