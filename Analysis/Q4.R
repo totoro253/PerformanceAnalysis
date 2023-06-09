@@ -23,13 +23,39 @@ library(lubridate)
 library(timetk)
 
 ## What was the stock in 1995?
-stock_prices_1995 <- c("MSFT","GE") %>%
+stock_prices_1995_Q1 <- c("MSFT","GE") %>%
   tq_get(get = "stock.prices",
          from = "1995-01-01",
          to = "1995-12-01") %>%
   group_by(symbol)
 
+stock_prices_1995_Q1 %>%
+  ggplot(aes(x=date,y=close)) +
+  geom_line()+
+  facet_wrap(~symbol)
+
+stock_prices_1995_Q2 <- c("MSFT","GE") %>%
+  tq_get(get = "stock.prices",
+         from = "1995-04-01",
+         to = "1995-08-01") %>%
+  group_by(symbol)
+
+
+
 stock_prices_1995
+
+
+
+#What was the overal closing. price?
+stock_prices_1995 %>%
+  ggplot(aes(x=date,y=close)) +
+  geom_line()+
+  facet_wrap(~symbol)
+
+stock_prices_2000 %>%
+  ggplot(aes(x=close,y=symbol)) +
+  geom_line()+
+  facet_wrap(~date)
 
 ## How did the adjusted price changed compaired to the opening price. in 1995?
 ggplot(stock_prices_1995, aes(date, adjusted,  color=symbol)) +
@@ -67,9 +93,24 @@ stock_prices_9520 <- c("MSFT","GE") %>%
          to = "2000-12-01") %>%
   group_by(symbol)
 
+stock_prices_9520 %>%
+  group_by(symbol) %>%
+  mutate(close = close / close[1]) %>%
+  ungroup () %>%
+  ggplot(aes(x=date,y=close, col=symbol)) +
+  geom_line()
+
+
 
 open_19952000 <-ggplot(stock_prices_9520, aes(date, open,  color=symbol)) +
+  geom_violin()
+
+
+
+ggplot(stock_prices_9520, aes(date, close,  color=symbol)) +
   geom_line()
+
+
 
 adjusted_1995200 <-ggplot(stock_prices_9520, aes(date, adjusted,  color=symbol)) +
   geom_line()
