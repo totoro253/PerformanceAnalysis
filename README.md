@@ -1,6 +1,25 @@
 # Context
 Consider investing in two stocks: Microsoft and General Electric. As a prudent investor, you analyze the historical performance of the stocks during the period of 1990-01-01 to 2017-12-31.
 
+#DOTCOM
+The dotcom bubble was an asset valuation 
+bubble that occurred in the 90s. 
+It led to a recession caused by highly 
+speculative investments in internet-based businesses. 
+The bubble burst in early 2000 after investors realized many 
+of these companies had business models that weren’t viable.
+
+The dotcom bubble was an asset valuation bubble that occurred
+from 1995 to 2000 in which investors 
+poured money into highly speculative Internet-based companies. 
+The dotcom bubble was largely caused by the
+lack of due diligence by investors—they invested in 
+Internet-based companies without qualifying
+an investment with reliable metrics.
+
+## Q4
+## What was the stock in 1995?
+
 # Q1: Which of the two stocks would have been your best performer during the study period?
 
 # Q2: Calculate quarterly returns instead of monthly
