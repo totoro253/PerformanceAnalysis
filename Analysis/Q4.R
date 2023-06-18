@@ -22,11 +22,11 @@ library(tidyquant)
 library(lubridate)
 library(timetk)
 
-## What was the stock in 1995?
+## What was the stock closing price in. Q1 1995?
 stock_prices_1995_Q1 <- c("MSFT","GE") %>%
   tq_get(get = "stock.prices",
          from = "1995-01-01",
-         to = "1995-12-01") %>%
+         to = "1995-04-01") %>%
   group_by(symbol)
 
 stock_prices_1995_Q1 %>%
@@ -34,16 +34,30 @@ stock_prices_1995_Q1 %>%
   geom_line()+
   facet_wrap(~symbol)
 
+## What was the stock closing price in Q2 1995?
+
 stock_prices_1995_Q2 <- c("MSFT","GE") %>%
   tq_get(get = "stock.prices",
          from = "1995-04-01",
          to = "1995-08-01") %>%
   group_by(symbol)
 
+stock_prices_1995_Q2 %>%
+  ggplot(aes(x=date,y=close)) +
+  geom_line()+
+  facet_wrap(~symbol)
 
+## What was the stock closing price in Q3 1995?
+stock_prices_1995_Q3 <- c("MSFT","GE") %>%
+  tq_get(get = "stock.prices",
+         from = "1995-08-01",
+         to = "1995-12-01") %>%
+  group_by(symbol)
 
-stock_prices_1995
-
+stock_prices_1995_Q3 %>%
+  ggplot(aes(x=date,y=close)) +
+  geom_line()+
+  facet_wrap(~symbol)
 
 
 #What was the overal closing. price?
