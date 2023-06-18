@@ -72,13 +72,17 @@ stock_prices_2000 %>%
   facet_wrap(~date)
 
 ## How did the adjusted price changed compaired to the opening price. in 1995?
+
+stock_prices_1995 <- c("MSFT","GE") %>%
+  tq_get(get = "stock.prices",
+         from = "1995-01-01",
+         to = "1995-12-01") %>%
+  group_by(symbol)
+
 ggplot(stock_prices_1995, aes(date, adjusted,  color=symbol)) +
   geom_line()
 
-
-
 ## What was the stock in 2000?
-
 stock_prices_2000 <- c("MSFT","GE") %>%
   tq_get(get = "stock.prices",
          from = "2000-01-01",
