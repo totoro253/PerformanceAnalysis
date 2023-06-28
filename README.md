@@ -1,5 +1,5 @@
 # Context
-Consider investing in two stocks: Microsoft and General Electric. As a prudent investor, you analyze the historical performance of the stocks during the period of 1990-01-01 to 2017-12-31. I tried to base my analysis on financial crisis or  other important financial events.
+ Consider investing in two stocks: Microsoft and General Electric. I analyzed the historical performance of the stocks during the period of 1990-01-01 to 2017-12-31. I tried to base my analysis on financial crisis or other important financial events.Such as the dotcom bubble.
 
 # DOTCOM
 The dotcom bubble was an asset valuation 
