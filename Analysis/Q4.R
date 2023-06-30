@@ -126,5 +126,11 @@ stock_2000_1995 <- ggplot(stock_prices_9520, aes(x=date,y=adjusted, color=symbol
 
 stock_2000_1995
 
+adjusted_19952000 <- ggplot(stock_prices_9520, aes(x=date,y=adjusted, color=symbol)) +
+  geom_line(aes(y=adjusted))+
+  geom_point()+
+  facet_wrap(~symbol,scales="free", ncol =1) +
+  theme_bw()
+adjusted_19952000
 
 
