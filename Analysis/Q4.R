@@ -66,10 +66,7 @@ stock_prices_1995 %>%
   geom_line()+
   facet_wrap(~symbol)
 
-stock_prices_2000 %>%
-  ggplot(aes(x=close,y=symbol)) +
-  geom_line()+
-  facet_wrap(~date)
+
 
 ## How did the adjusted price changed compaired to the opening price. in 1995?
 
@@ -90,6 +87,9 @@ stock_prices_2000 <- c("MSFT","GE") %>%
   group_by(symbol)
 
 stock_prices_2000
+
+ggplot(stock_prices_2000, aes(date, adjusted,  color=symbol)) +
+  geom_line()
 
 #Compare
 

@@ -11,6 +11,9 @@ stock_prices_2010 <- c("MSFT","GE") %>%
          to = "2010-12-01") %>%
   group_by(symbol)
 
+
+stock_prices_2010
+
 # Get stock prices per Q1
 Q1_2010 <- c("MSFT","GE") %>%
   tq_get(get = "stock.prices",
@@ -19,6 +22,7 @@ Q1_2010 <- c("MSFT","GE") %>%
   group_by(symbol)
 
 
+Q1_2010
 
 # Price per month in Q1
 Q1_monthly <- c("MSFT","GE") %>%
@@ -41,8 +45,8 @@ Q1_monthly <- c("MSFT","GE") %>%
 
 #Plot stock prices per month in Q1
 ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=symbol)) +
-  geom_area(aes(y=cl)
-ose))+
+  geom_area(aes(y=close)
+close))+
   theme_classic(()
 
 # Correlation for the closing price related to adjusting price
@@ -114,6 +118,8 @@ Q3_2010 <- c("MSFT","GE") %>%
          to = "2010-09-01") %>%
   group_by(symbol)
 
+Q3_2010
+
 
 # Get stock prices per Q4
 Q4_2010 <- c("MSFT","GE") %>%
@@ -121,7 +127,7 @@ Q4_2010 <- c("MSFT","GE") %>%
          from = "2010-09-01",
          to = "2010-12-01") %>%
   group_by(symbol)
-
+Q4_2010 
 
 
 
