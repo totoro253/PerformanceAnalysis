@@ -31,23 +31,10 @@ Q1_monthly <- c("MSFT","GE") %>%
          to = "2010-03-01") %>%
   group_by(symbol) 
  
-  
-  # Price per month in Q1
-  Q1_Daily <- Q1_monthly %>%
-       group_by(symbol) 
-       tq_transmute(select = adjusted,
-               mutate_fun = apply.daily,
-               FUN = max,
-               col_rename = "max.close") %>% 
-    mutate(daily.qtr = paste0(daily(date), "-Q",daily(date))) %>%
-    select(-date)
+
   
 
-#Plot stock prices per month in Q1
-ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=symbol)) +
-  geom_area(aes(y=close)
-close))+
-  theme_classic(()
+
 
 # Correlation for the closing price related to adjusting price
 Q1P1 <-ggplot(data = Q1_monthly, aes(x=date,y=adjusted, fill=close)) +
